@@ -1,0 +1,19 @@
+/* Write your CSS here */
+.main {
+  border: 1px solid black;
+  list-style-type: none;
+  border-radius: 3px;
+  width: 300px;
+  padding: 20px;
+  margin-left: 30px;
+}
+.innerbox {
+  display: flex;
+}
+.changebutton {
+  border: 0px;
+}
+.row_1 {
+  display: flex;
+  justify-content: space-between;
+}

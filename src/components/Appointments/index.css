@@ -1,0 +1,42 @@
+/* Write your CSS here */
+.mainBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blueBack {
+  background-color: blue;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  border: 0px;
+  cursor: pointer;
+}
+.rowing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.second-button {
+  margin-left: 190px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15px;
+  padding: 4px;
+  width: 80px;
+  text-align: center;
+}
+.first_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.innerbox {
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+.second-box {
+  margin-left: 70px;
+}
