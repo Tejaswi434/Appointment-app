@@ -1,4 +1,3 @@
-// Write your code here
 import {Component} from 'react'
 
 import './index.css'
@@ -57,6 +56,14 @@ class Appointments extends Component {
     }))
   }
 
+  deleteingunstarred = () => {
+    this.setState(prevState => ({
+      appointList: prevState.appointList.filter(
+        each => each.starLiked === true,
+      ),
+    }))
+  }
+
   render() {
     const {titleInput, dateInput, appointList} = this.state
     return (
@@ -64,7 +71,7 @@ class Appointments extends Component {
         <div className="first_box">
           <div>
             <form onSubmit={this.newAppointment}>
-              <h1>Appointment</h1>
+              <h1> Add Appointment</h1>
               <label htmlFor="title">Title</label>
               <br />
               <input
@@ -76,10 +83,10 @@ class Appointments extends Component {
               />
               <br />
               <br />
-              <label htmlFor=" date">Date</label>
+              <label htmlFor=" Date">Date</label>
               <br />
               <input
-                id="date"
+                id="Date"
                 type="date"
                 onChange={this.gettingDateInput}
                 placeholder="dd/mm/yy"
@@ -104,11 +111,17 @@ class Appointments extends Component {
           <div className="rowing">
             {' '}
             <h2>Appointments</h2>
-            <p className="second-button">Starred</p>
+            <button
+              className="second-button"
+              data-testid="star"
+              onClick={this.deleteingunstarred}
+            >
+              Starred
+            </button>
           </div>
           <div>
             <br />
-            <div className="innerbox">
+            <ul className="innerbox">
               {appointList.map(each => (
                 <AppointmentItem
                   each={each}
@@ -116,7 +129,7 @@ class Appointments extends Component {
                   changingTheLike={this.changingTheLike}
                 />
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
@@ -125,3 +138,4 @@ class Appointments extends Component {
 }
 
 export default Appointments
+
